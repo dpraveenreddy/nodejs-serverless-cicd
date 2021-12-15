@@ -1,15 +1,12 @@
-'use strict';
+const serverless = require('serverless-http');
+const express = require('express')
+const app = express()
 
-var fs = require('fs');
-var path = require('path');
+app.get('/', function (req, res) {
+    res.send('ok')
+  })
+app.get('/version', function (req, res) {
+  res.send('Serverless ci/cd v2!')
+})
 
-exports.get = function(event, context, callback) {
-  var contents = fs.readFileSync(`public${path.sep}index.html`);
-  var result = {
-    statusCode: 200,
-    body: contents.toString(),
-    headers: {'content-type': 'text/html'}
-  };
-
-  callback(null, result);
-};
+module.exports.handler = serverless(app);
