@@ -29,6 +29,7 @@ picked up by your project pipeline and deployed to AWS Lambda and Amazon API Gat
 (You can watch the pipeline progress on your AWS CodeStar project dashboard.)
 Once you've seen how that works, start developing your own code, and have fun!
 
+
 To run your tests locally, go to the root directory of the
 sample code and run the `npm test` command, which
 AWS CodeBuild also runs through your `buildspec.yml` file.
